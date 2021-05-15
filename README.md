@@ -1,6 +1,6 @@
-# Express Authentication
+# Magic: The Gathering Deck Builder
 
-Express authentication template using Passport + Flash messages + custom middleware
+An easy way to create decks that you might like to build out in the future.
 
 ## What it includes
 

@@ -1,9 +1,13 @@
 # Proposal
 Requirements for the weekend
 
-`1` An application name / concept
+`1` 
 
-`2` A repo for your project 2 (built from express_auth template)
+MTG Deck Builder gives the user the ability to search for cards and put them into organized decks they make.
+
+`2` 
+
+https://github.com/jshawndunn/MTGDeckBuilder
 
 `3` Wireframe for your app - (Lucidchart)
 

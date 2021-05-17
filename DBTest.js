@@ -1,9 +1,9 @@
 const mtg = require('mtgsdk')
 
 mtg.card.where(
-    { name: "Black Lotus" })
+    { name: "vampire" })
 .then(result => {
     result.forEach(card => {
-        console.log(card) // "Black Lotus"
+        console.log(imageUrl) // "Black Lotus"
     })
 })

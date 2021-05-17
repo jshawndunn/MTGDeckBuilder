@@ -11,7 +11,9 @@ https://github.com/jshawndunn/MTGDeckBuilder
 
 `3` Wireframe for your app - (Lucidchart)
 
-`4` An ERD with two models (minimum) > User + 1 Resource (one to many) - (Lucidchart)
+`4` 
+
+![MTG ERD](./MTGERD.png)
 
 `5` Create (3-5) User Stories for the base user experience - ( [Reference](https://revelry.co/resources/development/user-stories-that-dont-suck/) )
 

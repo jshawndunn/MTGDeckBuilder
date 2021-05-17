@@ -11,6 +11,8 @@ https://github.com/jshawndunn/MTGDeckBuilder
 
 `3` Wireframe for your app - (Lucidchart)
 
+![MTG Wireframe](./MTGWireFrame.jpg)
+
 `4` 
 
 ![MTG ERD](./MTGERD.png)

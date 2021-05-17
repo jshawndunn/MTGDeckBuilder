@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      card.hasMany(deck)
     }
   };
   card.init({
@@ -33,7 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     toughness: DataTypes.STRING,
     layout: DataTypes.STRING,
     imgUrl: DataTypes.STRING,
-    printings: DataTypes.ARRAY(DataTypes.STRING)
+    printings: DataTypes.ARRAY(DataTypes.STRING),
+    deckId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'card',

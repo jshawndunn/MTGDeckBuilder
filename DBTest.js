@@ -4,6 +4,6 @@ mtg.card.where(
     { name: "vampire" })
 .then(result => {
     result.forEach(card => {
-        console.log(imageUrl) // "Black Lotus"
+        console.log(card) // "Black Lotus"
     })
 })

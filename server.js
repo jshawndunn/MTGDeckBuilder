@@ -29,6 +29,7 @@ app.use((req,res,next)=>{
   next();
 })
 app.use('/auth', require('./controllers/auth'));
+app.use('/decks', require('./controllers/decks'));
 
 app.get('/', (req, res) => {
   res.render('index');

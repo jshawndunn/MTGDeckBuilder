@@ -1,15 +1,15 @@
 const db = require('./models')
 
-const findAllDecks = async (userId) => {
-    const decks = await db.deck.findAll({
-        where: {
-            userId:userId
-        }
-    });
-    console.log(decks)
-}
+// const findAllDecks = async (userId) => {
+//     const decks = await db.deck.findAll({
+//         where: {
+//             userId:userId
+//         }
+//     });
+//     console.log(decks)
+// }
 
-findAllDecks(1)
+// findAllDecks(1)
 // const findDeckCards = async () => {
 //     const deck = await db.deck.findOne({
 //         where: {

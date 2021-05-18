@@ -30,12 +30,15 @@ app.use((req,res,next)=>{
 })
 app.use('/auth', require('./controllers/auth'));
 app.use('/decks', require('./controllers/decks'));
+app.use('/search', require('./controllers/search'));
 
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-
+app.get('/search', (req, res) => {
+  res.send("Whatcha searchin for bub?")
+})
 app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get(); 
   res.render('profile', { id, name, email });

@@ -20,7 +20,7 @@ router.get('/new', isLoggedIn, (req, res) => {
   res.render('decks/createForm')
 })
 
-router.post('/new', async (req,res) => {
+router.post('/results', async (req,res) => {
   const { id } = req.user.get();
   const { deckName } = req.body
   const user  = await db.user.findOne({
@@ -31,7 +31,7 @@ router.post('/new', async (req,res) => {
   user.createDeck({
     name: deckName
   })
-  res.redirect('/decks')
+  res.render('search/results')
 })
 
 module.exports = router;

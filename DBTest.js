@@ -1,15 +1,15 @@
 const db = require('./models')
 
-// const findAllDecks = async (userId) => {
-//     const decks = await db.deck.findAll({
-//         where: {
-//             id:userId
-//         }
-//     });
-//     console.log(decks)
-// }
+const findAllDecks = async (userId) => {
+    const decks = await db.deck.findAll({
+        where: {
+            userId:userId
+        }
+    });
+    console.log(decks)
+}
 
-// findAllDecks(1)
+findAllDecks(1)
 // const findDeckCards = async () => {
 //     const deck = await db.deck.findOne({
 //         where: {
@@ -70,15 +70,15 @@ const db = require('./models')
 
 // saveCard()
 
-const createDeck = async (id) => {
-    const user = await db.user.findOne({
-            where: { id : id}
-        })
-    const deck = await user.createDeck({
-        name: 'Shawn\'s Test Deck'
-    })
-        console.log(deck)
-        return user, deck
-}
+// const createDeck = async (id) => {
+//     const user = await db.user.findOne({
+//             where: { id : id}
+//         })
+//     const deck = await user.createDeck({
+//         name: 'Shawn\'s Test Deck'
+//     })
+//         console.log(deck)
+//         return user, deck
+// }
 
-createDeck(2);
+// createDeck(2);

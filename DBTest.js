@@ -1,8 +1,39 @@
 const db = require('./models')
 
+const findDeckCards = async () => {
+    const deck = await db.deck.findOne({
+        where: {
+            name: 'Bob the Builder Deck'
+        },
+        include: [db.card]
+    })
+    
+    deck.get().cards.forEach(card => {
+        console.log(card.get())
+    })
+}
+findDeckCards()
+
+// const addToDeck = async () => {
+//     const deck = await db.deck.findOne({
+//         where: {
+//             name: 'Bob the Builder Deck'
+//         }
+//     });
+//     const card = await db.card.findOne({
+//         where: {
+//             name: 'Test Card 2'
+//         }
+//     });
+//     return(deck.addCard(card))
+//     // console.log(deck.get(), card.get())
+// }
+
+// addToDeck()
+
 // const saveCard = async () => {
 //     const card = await db.card.create({
-//         name: 'Test Card',
+//         name: 'Test Card 2',
 //         manaCost: '{1}{B}{R}',
 //         cmc: 2,
 //         colors: [ 'Black', 'Red' ],
@@ -29,15 +60,15 @@ const db = require('./models')
 
 // saveCard()
 
-const createDeck = async (id) => {
-    const user = await db.user.findOne({
-            where: { id : id}
-        })
-    const deck = await user.createDeck({
-        name: 'Bob the Builder Deck'
-    })
-        console.log(deck)
-        return user, deck
-}
+// const createDeck = async (id) => {
+//     const user = await db.user.findOne({
+//             where: { id : id}
+//         })
+//     const deck = await user.createDeck({
+//         name: 'Bob the Builder Deck'
+//     })
+//         console.log(deck)
+//         return user, deck
+// }
 
-createDeck(1);
+// createDeck(1);

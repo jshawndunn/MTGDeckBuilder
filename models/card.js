@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.deck.belongsToMany(models.card, {through: "decksCards"})
+      models.card.belongsToMany(models.deck, {
+        through: 'decksCards',
+        onDelete: 'CASCADE'})
     }
   };
   card.init({

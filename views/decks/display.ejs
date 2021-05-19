@@ -4,6 +4,8 @@
     <% decks.forEach((deck) => { %>
         <% const { id, name } = deck.get() %>
         <li><a href="/decks/<%= id %>"><%= name %></a></li>
-        <a href="/decks/remove/<%= id %>">Delete Deck</a>
+        <form method="POST" action="/decks/remove/<%= id %>?_method=DELETE">
+            <button type="submit">Delete Deck</button>
+        </form>
     <% }) %>
 </ul> 

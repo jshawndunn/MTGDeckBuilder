@@ -5,7 +5,6 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 const db = require('../models');
 
-
 router.get('/', isLoggedIn, async (req, res) => {
   const { id } = req.user.get(); 
   const decks = await db.deck.findAll({
@@ -34,8 +33,9 @@ router.get('/:id', isLoggedIn, async (req, res) => {
   res.render("decks/show", { deck })
 })
 
-router.get('/card/:deckId/:cardId', isLoggedIn, async (req, res) => {
-  // params passed in from decks/display
+// route to delete a single card from a deck. 
+router.delete('/card/:deckId/:cardId', isLoggedIn, async (req, res) => {
+  // params passed in from view decks/display
   const { deckId, cardId } = req.params
   // grab deck from model on deckId
   const deck = await db.deck.findOne({ where: { id:deckId }})
@@ -43,7 +43,7 @@ router.get('/card/:deckId/:cardId', isLoggedIn, async (req, res) => {
   const card = await db.card.findOne({ where: { id:cardId }})
   // use the association helper REMOVE to, well, remove the association from deck to the card instance 
   deck.removeCard(card)
-
+  // redirect(we don't want their URL on /card/:deckId/:cardId) to show cards in deck.
   res.redirect(`/decks/${deckId}`)
 })
 

@@ -2,5 +2,8 @@
 
 <% deck.get().cards.forEach(card => { %>
     <img src="<%= card.get().imgUrl %>" alt="<%= card.name %>">
-    <a href="/decks/card/<%= deck.get().id %>/<%= card.get().id %>">Delete Card</a>
+    <form method="POST" action="/decks/card/<%= deck.get().id %>/<%= card.get().id %>?_method=DELETE">
+        <button type="submit">Delete Card</button>
+    </form>
+    
 <% }); %> 

@@ -20,6 +20,13 @@ router.get('/new', isLoggedIn, (req, res) => {
   res.render('decks/createForm')
 })
 
+router.get('/remove/:id', isLoggedIn, async (req, res) => {
+  const { id } = req.params
+  await db.deck.destroy({ where: { id } })
+
+  res.redirect('/decks')
+})
+
 router.get('/:id', isLoggedIn, async (req, res) => {
   const { id } = req.params
   const deck = await db.deck.findOne({

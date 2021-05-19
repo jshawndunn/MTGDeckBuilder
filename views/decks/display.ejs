@@ -4,5 +4,6 @@
     <% decks.forEach((deck) => { %>
         <% const { id, name } = deck.get() %>
         <li><a href="/decks/<%= id %>"><%= name %></a></li>
+        <a href="/decks/remove/<%= id %>">Delete Deck</a>
     <% }) %>
 </ul> 

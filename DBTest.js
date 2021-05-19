@@ -10,19 +10,19 @@ const db = require('./models')
 // }
 
 // findAllDecks(1)
-// const findDeckCards = async () => {
-//     const deck = await db.deck.findOne({
-//         where: {
-//             name: 'Bob the Builder Deck'
-//         },
-//         include: [db.card]
-//     })
+const findDeckCards = async () => {
+    const deck = await db.deck.findOne({
+        where: {
+            name: 'Fat Deck'
+        },
+        include: [db.card]
+    })
     
-//     deck.get().cards.forEach(card => {
-//         console.log(card.get())
-//     })
-// }
-// findDeckCards()
+    deck.get().cards.forEach(card => {
+        console.log(card.get())
+    })
+}
+findDeckCards()
 
 // const addToDeck = async () => {
 //     const deck = await db.deck.findOne({

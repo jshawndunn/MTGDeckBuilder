@@ -16,4 +16,20 @@ router.post('/results', async (req, res) => {
     res.render('search/results', { cards })
 })
 
+router.post('/add', async (req, res) => {
+    const { name, id } = req.body;
+    const deck = await db.deck.findOne({
+        where: { name }
+    });
+    const card = await mtg.card.find(id);
+
+    console.log(deck, card.card.set)
+    const [addedCard] = await db.card.findOrCreate({
+        where: { name:card.card.name,
+            set:card.card.set
+        }
+    })
+    deck.addCard(addedCard)
+    res.redirect('/search')
+})
 module.exports = router;

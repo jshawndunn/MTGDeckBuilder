@@ -1,7 +1,11 @@
 <h1>Search Results</h1>
 
-<ul>
-    <% cards.forEach(card => { %>
-        <li> <img src="<%= card.imageUrl %>" alt="<%= card.name %>"></li>
-    <% }); %> 
-</ul>
+<% cards.forEach(card => { %>
+    <img src="<%= card.imageUrl %>" alt="<%= card.name %>">
+    <form action="/search/add" method="POST">
+        <label for="name">Deck Name</label>
+        <input id="name" type="text" name="name">
+        <input type="hidden" value=<%= card.id %> name="id">
+        <input type="submit" value="Add Card">
+    </form>
+<% }); %> 

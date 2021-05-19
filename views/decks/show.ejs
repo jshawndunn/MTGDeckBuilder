@@ -1,4 +1,10 @@
 <h1>Deck of Cards</h1>
+<form method="post" action="/decks/name/?_method=put" >
+    <input type="hidden" name="id" value="<%= deck.get().id %>">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" value="<%= deck.get().name %>">
+    <button type="submit">Update Name</button>
+</form>
 
 <% deck.get().cards.forEach(card => { %>
     <img src="<%= card.get().imgUrl %>" alt="<%= card.name %>">

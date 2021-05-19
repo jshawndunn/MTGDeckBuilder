@@ -1,0 +1,5 @@
+<h1>Deck of Cards</h1>
+
+<% deck.get().cards.forEach(card => { %>
+    <img src="<%= card.get().imgUrl %>" alt="<%= card.name %>">
+<% }); %> 

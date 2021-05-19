@@ -20,7 +20,19 @@ router.get('/new', isLoggedIn, (req, res) => {
   res.render('decks/createForm')
 })
 
-router.post('/new', async (req,res) => {
+router.get('/:id', isLoggedIn, async (req, res) => {
+  const { id } = req.params
+  const deck = await db.deck.findOne({
+      where: {
+          id
+      },
+      include: [db.card]
+  })
+  
+  res.render("decks/show", { deck })
+})
+
+router.post('/new', isLoggedIn, async (req,res) => {
   const { id } = req.user.get();
   const { deckName } = req.body
   const user  = await db.user.findOne({

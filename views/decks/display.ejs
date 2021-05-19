@@ -2,7 +2,7 @@
 
 <ul>
     <% decks.forEach((deck) => { %>
-        <% const { name } = deck.get() %>
-        <li><%= name %></li>
+        <% const { id, name } = deck.get() %>
+        <li><a href="/decks/<%= id %>"><%= name %></a></li>
     <% }) %>
 </ul> 

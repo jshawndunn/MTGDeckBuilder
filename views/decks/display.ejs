@@ -1,11 +1,13 @@
-<h1>ALL OF YOUR DECKS</h1>
-
-<ul>
-    <% decks.forEach((deck) => { %>
-        <% const { id, name } = deck.get() %>
-        <li><a href="/decks/<%= id %>"><%= name %></a></li>
-        <form method="POST" action="/decks/remove/<%= id %>?_method=DELETE">
-            <button type="submit">Delete Deck</button>
-        </form>
-    <% }) %>
-</ul> 
+<div>
+    <h1>ALL OF YOUR DECKS</h1>
+    
+    <ul>
+        <% decks.forEach((deck) => { %>
+            <% const { id, name } = deck.get() %>
+            <li><a href="/decks/<%= id %>"><%= name %></a></li>
+            <form method="POST" action="/decks/remove/<%= id %>?_method=DELETE">
+                <button type="submit">Delete Deck</button>
+            </form>
+        <% }) %>
+    </ul> 
+</div>

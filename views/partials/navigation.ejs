@@ -1,16 +1,23 @@
 <header>
-    <nav>
-      <ul>
-        <% if (!currentUser) { %>
-          <li><a href="/auth/signup">Signup</a></li>
-          <li><a href="/auth/login">Login</a></li>
-        <% } else { %>
-        <li><a href="/auth/logout">Logout</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/decks">Decks</a></li>
-        <li><a href="/decks/new">Create Deck</a></li>
-        <li><a href="/search">Search</a></li>
-        <% } %>
-      </ul>
+    <nav class="navbar">
+      <div class="navbar-menu">
+        <div class="navbar-brand navbar-start">
+          <a class="navbar-item" href="/">MTG Deck Builder</a>
+        </div>
+        <div class="navbar-end">
+          <ul>
+            <% if (!currentUser) { %>
+              <li><a class="navbar-item" href="/auth/signup">Signup</a></li>
+              <li><a class="navbar-item" href="/auth/login">Login</a></li>
+            <% } else { %>
+            <li><a class="navbar-item" href="/auth/logout">Logout</a></li>
+            <li><a class="navbar-item" href="/profile">Profile</a></li>
+            <li><a class="navbar-item" href="/decks">Decks</a></li>
+            <li><a class="navbar-item" href="/decks/new">Create Deck</a></li>
+            <li><a class="navbar-item" href="/search">Search</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>

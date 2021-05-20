@@ -1,15 +1,28 @@
-<h1>Deck of Cards</h1>
-<form method="post" action="/decks/name/?_method=put" >
-    <input type="hidden" name="id" value="<%= deck.get().id %>">
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name" value="<%= deck.get().name %>">
-    <button type="submit">Update Name</button>
-</form>
+<div class="main">
+    <div class="block">
+        <form class="deck-name" method="post" action="/decks/name/?_method=put" >
+            <input type="hidden" name="id" value="<%= deck.get().id %>">
+            <label for="name"></label>
+            <input class="print-clean"type="text" name="name" id="name" value="<%= deck.get().name %>"><br>
+            <!-- <button type="submit">Update Name</button> -->
+        </form>
+    </div>
 
-<% deck.get().cards.forEach(card => { %>
-    <img src="<%= card.get().imgUrl %>" alt="<%= card.name %>">
-    <form method="POST" action="/decks/card/<%= deck.get().id %>/<%= card.get().id %>?_method=DELETE">
-        <button type="submit">Delete Card</button>
-    </form>
-    
-<% }); %> 
+    <% deck.get().cards.forEach(card => { %>
+        <div class="block card-container">
+            <div class="card-main">
+                <div>
+                    <img class="card-image" src="<%= card.get().imgUrl %>" alt="<%= card.name %>">
+                </div>
+                <div> 
+                    <p><%= card.get().name %> </p>
+                </div>
+            </div>
+            <div class="block">
+                <form method="POST" action="/decks/card/<%= deck.get().id %>/<%= card.get().id %>?_method=DELETE">
+                    <button class="button" type="submit">Delete Card</button>
+                </form>
+            </div>
+        </div>
+    <% }); %> 
+</div>

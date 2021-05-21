@@ -15,13 +15,20 @@ router.get('/', isLoggedIn, (req, res) => {
 // Display search results
 router.post('/results', isLoggedIn, async (req, res) => {
     const { card } = req.body 
+    const { id } = req.user.get();
     const cards = await mtg.card.where({ name: card })
-    res.render('search/results', { cards })
+    const decks = await db.deck.findAll({ where: { userId:id } });
+    res.render('search/results', { cards, decks })
 })
 // Insert card into database and connect to a deck
 router.post('/add', isLoggedIn, async (req, res) => {
-    const { name, id } = req.body;
-    const deck = await db.deck.findOne({ where: { name } });
+    try {
+    const { idDeck, id } = req.body;
+    const deck = await db.deck.findOne({ 
+        where: {  
+            id:idDeck } });
+    console.log('------------error------------')
+    console.log(deck.get())
     const card = await mtg.card.find(id);
     // Inserting data for card
     const [addedCard] = await db.card.findOrCreate({
@@ -31,6 +38,11 @@ router.post('/add', isLoggedIn, async (req, res) => {
         }
     })
     await deck.addCard(addedCard)
-    res.redirect('/search')
+    res.redirect('/search')} 
+    catch (error) {
+        console.log(error)
+        req.flash('error', 'Sorry but please try to add your card again.')
+        res.redirect('/search')
+    }
 })
 module.exports = router;

@@ -59,3 +59,10 @@ input:focus{
   border-radius: 10px;
 }
 
+.box {
+  width: 35vw;
+  border: solid;
+  border-color: #39603D;
+  border-radius: 10px;
+  background-color: #A3BCB6;
+}

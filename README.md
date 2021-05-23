@@ -10,6 +10,7 @@ MTG Deck Builder was created to be an easy way for you to organize deck ideas.
 - sequelize: Node.js ORM
 - mtgsdk: SDK for MTG API
 - passport: authentication managment
+- bulma: style
     
 ## Deployment Method
 

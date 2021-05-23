@@ -55,10 +55,6 @@ input:focus{
   background-color: #A3BCB6;
 }
 
-img {
-  border-radius: 10px;
-}
-
 .card-image {
   margin-right: 3em;
   border-radius: 10px;

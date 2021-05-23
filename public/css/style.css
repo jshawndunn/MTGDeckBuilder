@@ -66,3 +66,7 @@ input:focus{
   border-radius: 10px;
   background-color: #A3BCB6;
 }
+
+.search-form {
+  width: 35vw;
+}

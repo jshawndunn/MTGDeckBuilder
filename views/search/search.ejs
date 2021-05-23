@@ -1,8 +1,11 @@
 <div>
-    <form action="/search/results" method="POST">
-        <label for="card">Card Name</label>
-        <input id="card" type="text" name="card">
-    
-        <input type="submit" value="Find Card">
-    </form>
+    <h1 class="title"> Card Search</h1>
+    <h3 class="subtitle">Please enter a full or partial card name</h3>
+        <form class="search-form" action="/search/results" method="POST">
+            <div class="field">
+                <label class="label" for="card">Card Name:</label>
+                <input class="input" id="card" type="text" name="card">
+            </div>
+            <input class="button is-small" type="submit" value="Find Card">
+        </form>
 </div>

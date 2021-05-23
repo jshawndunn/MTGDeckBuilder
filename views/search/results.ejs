@@ -1,17 +1,26 @@
 <div>
-    <h1>Search Results</h1>
+    <h1 class="title">Search Results</h1>
+    <h3 class="subtitle">Choose your deck from the list and add card.</h3>
 
     <% cards.forEach(card => { %>
-        <img src="<%= card.imageUrl %>" alt="<%= card.name %>">
-        <form action="/search/add" method="POST">
-            <label for="idDeck">Deck Name</label>
-            <select id="idDeck" name="idDeck">
-            <% decks.forEach(deck => { %>
-                <option value="<%= deck.id %> "><%= deck.name %></option>
-            <% }) %> 
-            </select>
-            <input type="hidden" value=<%= card.id %> name="id">
-            <input type="submit" value="Add Card">
-        </form>
+    
+        <% if(card.imageUrl){ %> 
+            <div class="card-container">
+                <div class="card-main">
+                    <img class="card-image" src="<%= card.imageUrl %>" alt="<%= card.name %>">
+                    <p><%= card.name %> </p>
+                </div>
+                <form action="/search/add" method="POST">
+                    <label for="idDeck">Deck Name</label>
+                    <select id="idDeck" name="idDeck">
+                    <% decks.forEach(deck => { %>
+                        <option value="<%= deck.id %> "><%= deck.name %></option>
+                    <% }) %> 
+                    </select>
+                    <input type="hidden" value=<%= card.id %> name="id">
+                    <input type="submit" value="Add Card">
+                </form>
+            </div>
+        <% } %> 
     <% }); %> 
 </div>

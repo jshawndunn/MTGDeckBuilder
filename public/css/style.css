@@ -43,6 +43,7 @@ input:focus{
 .card-container {
   display: flex;
   align-items: center;
+  margin-top: 2em;
 }
 .card-main {
   display:flex;
@@ -50,8 +51,12 @@ input:focus{
   width: 35vw;
   border: solid;
   border-color: #39603D;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #A3BCB6;
+}
+
+img {
+  border-radius: 10px;
 }
 
 .card-image {

@@ -8,7 +8,11 @@
             <div class="card-container">
                 <div class="card-main">
                     <img class="card-image" src="<%= card.imageUrl %>" alt="<%= card.name %>">
-                    <p><%= card.name %> </p>
+                    <div class="card-desc">
+                        <div class="block"><%= card.name %> <%= card.manaCost %></div>
+                        <div class="block"><%= card.type %> </div>
+                        <div class="block"><%= card.text %> </div>
+                    </div>
                 </div>
                 <form action="/search/add" method="POST">
                     <label for="idDeck">Deck Name</label>

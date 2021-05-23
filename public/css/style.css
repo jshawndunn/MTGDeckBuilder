@@ -60,6 +60,10 @@ input:focus{
   border-radius: 10px;
 }
 
+.card-desc {
+  display: flex;
+  flex-direction: column;
+}
 .box {
   width: 35vw;
   border: solid;

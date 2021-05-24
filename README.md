@@ -116,6 +116,15 @@ router.post('/add', isLoggedIn, async (req, res) => {
     }
 })
 ```
+## Biggest Struggles
+
+- removing a card from a many-to-many association(deck-deakscards-card)
+- updating a model 
+
+## Biggest Snuggles
+
+- James Brolin McGruff III (the dog that lives in my house)
+
 ## Future Considerations
 
 - streamlined navigation

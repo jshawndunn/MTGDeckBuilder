@@ -9,13 +9,12 @@ MTG Deck Builder was created to be an easy way for you to organize deck ideas.
 - express: web framework
 - sequelize: Node.js ORM
 - mtgsdk: SDK for MTG API
-- passport: authentication managment
+- passport: authentication management
 - bulma: style
     
 ## Deployment Method
 
-Deploy to Heroku with a postGres backend. 
-More details to follow
+Deploy to Heroku with a postgresql backend. More details to follow
 
 ## Usage
 

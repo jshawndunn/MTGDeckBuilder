@@ -24,12 +24,8 @@ router.post('/results', isLoggedIn, async (req, res) => {
 router.post('/add', isLoggedIn, async (req, res) => {
     try {
     const { idDeck, id } = req.body;
-    const deck = await db.deck.findOne({ 
-        where: {  
-            id:idDeck } });
+    const deck = await db.deck.findOne({ where: { id:idDeck } });
     const card = await mtg.card.find(id);
-    console.log('------------error------------')
-    console.log(card.card)
     // Inserting data for card
     const [addedCard] = await db.card.findOrCreate({
         where: { name:card.card.name,

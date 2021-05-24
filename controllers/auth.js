@@ -35,7 +35,6 @@ router.post('/signup', async (req, res) => {
     });
 
     if (created) {
-      console.log('---------NEW USER---------')
       const successObject = {
         successRedirect: '/',
         successFlash: `Welcome ${user.name}. Account was created.`
@@ -47,8 +46,6 @@ router.post('/signup', async (req, res) => {
       res.redirect('/auth/signup')
     }
   } catch (error) {
-    console.log('-----errr-------');
-    console.log(error);
     req.flash('error', 'Either email or password is incorrect.')
     res.redirect('/auth/signup');
   }

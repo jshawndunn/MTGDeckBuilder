@@ -25,7 +25,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req,res,next)=>{
-  console.log(res.locals);
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
   next();

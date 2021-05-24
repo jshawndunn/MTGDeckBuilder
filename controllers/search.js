@@ -50,7 +50,6 @@ router.post('/add', isLoggedIn, async (req, res) => {
     await deck.addCard(addedCard)
     res.redirect('/search')} 
     catch (error) {
-        console.log(error)
         req.flash('error', 'Sorry but please try to add your card again.')
         res.redirect('/search')
     }

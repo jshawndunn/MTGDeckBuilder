@@ -28,22 +28,22 @@ Just login to access your decks or search for new cards.
 ### Create a deck
 Click the "Create Deck" link to create a new deck.
 
-![WelcomeScreen](./public/assets/createDeck.png)
+![CreateDeck](./public/assets/createDeck.png)
 
 ### Decks
 Click the "Decks" link to view all of your decks.
 
-![WelcomeScreen](./public/assets/decks.png)
+![AllDecks](./public/assets/decks.png)
 
 ### Search
 Click on the "Search" link to search for a card by full or partial name.
 
-![WelcomeScreen](./public/assets/search.png)
+![Search](./public/assets/search.png)
 
 ### Search Results
 Choose your deck from the dropdown and add your card
 
-![WelcomeScreen](./public/assets/searchResults.png)
+![SearchResults](./public/assets/searchResults.png)
 
 ## Code Samples
 ### Models

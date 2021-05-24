@@ -14,8 +14,10 @@
                 <div>
                     <img class="card-image" src="<%= card.get().imgUrl %>" alt="<%= card.name %>">
                 </div>
-                <div> 
-                    <p><%= card.get().name %> </p>
+                <div class="card-desc"> 
+                    <div class="block"><%= card.get().name %> </div>
+                    <div class="block"><%= card.get().type %> </div>
+                    <div class="block"><%= card.get().text %> </div>
                 </div>
             </div>
             <div class="block">
